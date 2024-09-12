@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "decorator_pattern": "node design_patterns/decorator_pattern/decorator.js",
+    "proxy_pattern": "node design_patterns/proxy_pattern/proxy.js",
+    "caching_proxy_pattern": "node design_patterns/proxy_pattern/caching-proxy.js"
   },
   "keywords": [],
   "author": "",
