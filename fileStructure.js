@@ -8,7 +8,10 @@ function logDirectoryStructure(dir, depth = 0) {
     files.forEach(file => {
         const fullPath = path.join(dir, file);
         const indent = '  '.repeat(depth);
-        
+
+        // Exclude the .git and node_modules directories
+        if (file === '.git' || file === 'node_modules' || file === '.DS_Store') return;
+
         // Check if it's a directory or a file
         if (fs.lstatSync(fullPath).isDirectory()) {
             console.log(`${indent}📁 ${file}`);
