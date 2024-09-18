@@ -1,15 +1,28 @@
 {
   "name": "learnjs",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "A project demonstrating various design patterns & code basics in JavaScript.",
+  "main": "fileStructure.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "decorator_pattern": "node design_patterns/decorator_pattern/decorator.js",
-    "proxy_pattern": "node design_patterns/proxy_pattern/proxy.js",
-    "caching_proxy_pattern": "node design_patterns/proxy_pattern/caching-proxy.js"
+    "observer": "node behavioral/observer_pattern/stock_notify.js",
+    "strategy": "node behavioral/strategy_pattern/strategy.js",
+    "abs-factory": "node creational/abstract_factory_pattern/abs_factory.js",
+    "factory": "node creational/factory_pattern/factory.js",
+    "factory2": "node creational/factory_pattern/factory2.js",
+    "notification": "node creational/factory_pattern/notification.js",
+    "singleton": "node creational/singleton_pattern/singleton.js",
+    "mysql2": "node creational/singleton_pattern/mysql2.js",
+    "decorator": "node structural/decorator_pattern/decorator.js",
+    "facade": "node structural/facade_pattern/facade.js",
+    "mix-ins": "node structural/mix-ins_Pattern/mix-ins.js",
+    "mix-ins-ui": "node structural/mix-ins_Pattern/mix-ins_ui.js",
+    "proxy": "node structural/proxy_pattern/proxy.js",
+    "caching-proxy": "node structural/proxy_pattern/caching-proxy.js",
+    "revealing": "node structural/revealing_pattern/authModule.js",
+    "iife-counter": "node structural/revealing_pattern/IIFE-counter.js",
+    "structure": "node fileStructure.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "description": ""
+  "license": "ISC"
 }
