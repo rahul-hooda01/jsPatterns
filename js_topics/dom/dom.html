@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .task {
+      background-color: #f4f4f4;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 4px;
+    }
+    .completed {
+      text-decoration: line-through;
+      color: grey;
+    }
+  </style>
+</head>
+<body>
+  <h1>Task Manager</h1>
+  <input type="text" id="new-task" placeholder="Add a new task" />
+  <button id="add-task-btn">Add Task</button>
+
+  <ul id="task-list"></ul>
+
+  <script>
+    document.getElementById('add-task-btn').addEventListener('click', function() {
+      const taskInput = document.getElementById('new-task');
+      const taskText = taskInput.value.trim();
+
+      if (taskText === "") {
+        alert("Please enter a task.");
+        return;
+      }
+
+      // Create a new task item
+      const taskItem = document.createElement('li');
+      taskItem.classList.add('task');
+      taskItem.textContent = taskText;
+
+      // Add click event to toggle task completion
+      taskItem.addEventListener('click', function() {
+        taskItem.classList.toggle('completed');
+      });
+
+      // Append the new task to the task list
+      const taskList = document.getElementById('task-list');
+      taskList.appendChild(taskItem);
+
+      // Clear the input field
+      taskInput.value = "";
+    });
+  </script>
+</body>
+</html>
