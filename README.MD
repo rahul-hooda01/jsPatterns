@@ -67,7 +67,14 @@ To get started with the examples in this repository, clone the repository to you
 > git clone https://github.com/rahul-hooda01/jsPatterns.git
 > cd jsPatterns
 
-TO see Structure 
-> npm run structure
-to run html and css codes
-> npm run start
+To see structure RUN
+
+```jsx
+npm run structure
+```
+
+To run HTML & css code RUN
+
+```jsx
+npm run start
+```
