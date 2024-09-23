@@ -20,9 +20,13 @@
     "caching-proxy": "node structural/proxy_pattern/caching-proxy.js",
     "revealing": "node structural/revealing_pattern/authModule.js",
     "iife-counter": "node structural/revealing_pattern/IIFE-counter.js",
-    "structure": "node fileStructure.js"
+    "structure": "node fileStructure.js",
+    "start": "lite-server"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
 }

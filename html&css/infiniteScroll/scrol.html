@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infinite Scroll Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .content {
+      background: #f0f0f0;
+      margin: 10px 0;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    #loading {
+      text-align: center;
+      margin: 20px 0;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Infinite Scroll Example</h1>
+  <div id="content-container">
+    <!-- Initial Content -->
+    <div class="content">Initial content block 1</div>
+    <div class="content">Initial content block 2</div>
+    <div class="content">Initial content block 3</div>
+    <div class="content">Initial content block 4</div>
+    <div class="content">Initial content block 5</div>
+    <div class="content">Initial content block 6</div>
+    <div class="content">Initial content block 7</div>
+    <div class="content">Initial content block 8</div>
+    <div class="content">Initial content block 9</div>
+    <div class="content">Initial content block 10</div>
+  </div>
+  <div id="loading">Loading more content...</div>
+
+  <script>
+    const contentContainer = document.getElementById('content-container');
+    const loadingElement = document.getElementById('loading');
+    let page = 1; // Tracks the current page to load
+    let isFetching = false; // Prevents multiple fetches
+
+    // Function to create new content blocks
+    function createContentBlock(text) {
+      const contentBlock = document.createElement('div');
+      contentBlock.className = 'content';
+      contentBlock.textContent = text;
+      return contentBlock;
+    }
+
+    // Function to load content dynamically
+    function loadContent(page) {
+      if (isFetching) return; // Prevent multiple fetches
+      isFetching = true;
+      loadingElement.style.display = 'block';
+
+      // Simulate an API call with a timeout
+      setTimeout(() => {
+        for (let i = 0; i < 5; i++) {
+          const contentBlock = createContentBlock(`Content for page ${page}, item ${i + 1}`);
+          contentContainer.appendChild(contentBlock);
+        }
+        loadingElement.style.display = 'none';
+        isFetching = false;
+      }, 1000); // Simulates a delay for loading content
+    }
+
+    // Infinite scroll logic
+    window.addEventListener('scroll', () => {
+      const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+
+      // Check if the user has scrolled near the bottom of the page
+      if (scrollTop + clientHeight >= scrollHeight - 5) {
+        page++; // Increment the page number
+        loadContent(page); // Load the next batch of content
+      }
+    });
+
+    // Initial load
+    loadContent(page);
+  </script>
+</body>
+</html>
