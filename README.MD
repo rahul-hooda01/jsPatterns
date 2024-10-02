@@ -1,6 +1,4 @@
-# Web Development Topics Repository
-
-Welcome to the Web Development Topics Repository! This repository is designed to provide a comprehensive overview of various fundamental topics in web development, including design patterns, JavaScript core concepts, and HTML & CSS techniques.
+# Welcome to the Web Development Topics Repository! This repository is designed to provide a comprehensive overview of various fundamental topics in web development, including design patterns, JavaScript core concepts, and HTML & CSS techniques.
 
 ## Table of Contents
 
